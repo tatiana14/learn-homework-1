@@ -12,16 +12,21 @@
 
     Пользователь: Что делаешь?
     Программа: Программирую
-    
+
 """
 
-questions_and_answers = {}
+questions_and_answers = {"Hey": "Hey!", "What are you doing?": "Programming", "How are you?": "All good"}
 
 def ask_user(answers_dict):
     """
     Замените pass на ваш код
     """
-    pass
-    
+    question_from_user = input(f"Ask me something. Available questions are {list(questions_and_answers.keys())}")
+    while question_from_user in questions_and_answers.keys():
+        print(questions_and_answers[question_from_user])
+        question_from_user = input(f"Ask me something. Available questions are {questions_and_answers.keys()}")
+    print("This question is not supported. Start over!")
+
+
 if __name__ == "__main__":
     ask_user(questions_and_answers)
